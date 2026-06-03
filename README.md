@@ -117,7 +117,7 @@ IAM and identity are one layer. Your S3 bucket policies, networking, encryption,
 
 **Want the full picture?** ARX Cloud Security runs a comprehensive diagnostic across 8 security domains — prioritised findings and a remediation roadmap delivered in 5 days.
 
-→ hello@arx-cloud.security
+→ lukest@arxcloudsecurity.co.uk
 
 ---
 
@@ -127,4 +127,4 @@ MIT — use it, fork it, run it on everything.
 
 ---
 
-Built by [ARX Cloud Security](https://arx-cloud.security) 🇬🇧
+Built by [ARX Cloud Security](https://arxcloudsecurity.co.uk) 🇬🇧

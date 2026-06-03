@@ -1,4 +1,5 @@
 import sys
+import os
 import boto3
 import botocore.exceptions
 
@@ -43,7 +44,7 @@ def main():
     print("   Running 13 checks against your AWS account...\n")
 
     try:
-        session = boto3.Session()
+        session = boto3.Session(region_name=os.environ.get("AWS_DEFAULT_REGION", "us-east-1"))
         iam_client = session.client("iam")
         cloudtrail_client = session.client("cloudtrail")
         sts_client = session.client("sts")
@@ -65,7 +66,6 @@ def main():
 
     print()
 
-    import os
     os.makedirs("output", exist_ok=True)
     markdown.write(findings, account_id, "output/report.md")
     json_out.write(findings, account_id, "output/results.json")
