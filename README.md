@@ -121,6 +121,61 @@ IAM and identity are one layer. Your S3 bucket policies, networking, encryption,
 
 ---
 
+## Troubleshooting
+
+**Error: `Unable to locate credentials`**
+
+Your AWS CLI isn't configured or the profile isn't active. Fix:
+```bash
+# Option 1 — run with a named profile
+AWS_PROFILE=your-profile-name arx-iam-check
+
+# Option 2 — configure the default profile
+aws configure
+```
+Then run `aws sts get-caller-identity` to confirm credentials are working before running the tool.
+
+---
+
+**Error: `ModuleNotFoundError: No module named 'boto3'`**
+
+boto3 isn't installed in your current environment. Fix:
+```bash
+# If you installed with pip install -e .
+pip install boto3
+
+# If you're using a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate        # Mac/Linux
+venv\Scripts\activate           # Windows
+pip install -e .
+arx-iam-check
+```
+
+---
+
+**Error: `AccessDenied` on one or more checks**
+
+Your IAM user or role is missing one of the required read permissions. The tool will still run and report results for the checks it can complete — the denied check will show as `SKIPPED` with the specific permission flagged.
+
+To fix, attach the permissions policy from the **What Permissions Does It Need?** section above to your IAM user or role.
+
+---
+
+**Tool runs but output folder is empty**
+
+The `output/` folder is created in the directory where you run the command. Make sure you're running from inside the cloned repo:
+```bash
+cd arx-iam-check
+arx-iam-check
+```
+
+---
+
+**Still stuck?** Open an issue at [github.com/arx-cloud-security/arx-iam-check/issues](https://github.com/arx-cloud-security/arx-iam-check/issues) or email lukest@arxcloudsecurity.co.uk
+
+---
+
 ## License
 
 MIT — use it, fork it, run it on everything.
