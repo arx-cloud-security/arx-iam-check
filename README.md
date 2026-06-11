@@ -4,6 +4,10 @@
 
 Not comfortable running this yourself? We'll run it for you and deliver a full report in 48 hours — [lukest@arxcloudsecurity.co.uk](mailto:lukest@arxcloudsecurity.co.uk)
 
+Want to talk through your findings? [Book a 15-min call](https://calendly.com/lukest-arxcloudsecurity/aws-iam-review-15-mins)
+
+Ready to discuss your full AWS security posture? [Book a 30-min discovery call](https://calendly.com/lukest-arxcloudsecurity/aws-security-discovery-30-mins)
+
 A read-only Python CLI tool that scans your AWS account for critical IAM misconfigurations and identity blind spots. It runs locally using your existing credentials and produces a clean Markdown report and structured JSON output.
 
 Most AWS startups have at least 5 misconfigurations that would fail an enterprise security questionnaire. This tool tells you exactly which ones — before a customer or auditor does.
